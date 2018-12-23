@@ -1,0 +1,182 @@
+﻿@model Models.ViewModels.UserAccountEntryVm
+
+@{
+    ViewBag.Title = "register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/plugins/iCheck/square/blue.css">
+
+    <link href="~/Content/Logout.css" rel="stylesheet" />
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box ">
+        <div class="login-logo">
+            <a href="~/index2.html"><b>EMS</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body ">
+
+                <form action="~/Account/register" method="post">
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true)
+
+             
+                        <p>
+                            @if (ViewBag.msc != null)
+                                {
+                                    <div class="form-group">
+                                        <p style="color:green">@ViewBag.msc</p>
+                                    </div>
+                                }
+                        </p>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.FirstName)
+                                @Html.ValidationMessageFor(model => model.FirstName)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.LastName)
+                                @Html.ValidationMessageFor(model => model.LastName)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Email)
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.UserName)
+                                @Html.ValidationMessageFor(model => model.UserName)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Password)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ConfirmPassword, new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ConfirmPassword)
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-lg-11">
+                            <div class="pull-right">
+                                <input type="submit" value="Register" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+
+                    </div>
+                </form>
+
+
+                <div class="row col-md-12 pull-right">
+                    <a href="~/Account/login" class="text-center">Login here</a>
+                </div>
+
+        <div class="row">
+
+
+        </div>
+        </div>
+        <!-- /.login-box-body -->
+
+    </div>
+
+
+    <!-- /.login-box -->
+    <!-- jQuery 3 -->
+    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="~/plugins/iCheck/icheck.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

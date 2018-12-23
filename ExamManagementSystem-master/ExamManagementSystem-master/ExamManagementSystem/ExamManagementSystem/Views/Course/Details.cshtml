@@ -1,0 +1,110 @@
+﻿
+@model Models.ViewModels.CourseEntryVm
+
+@{
+    Layout = "~/Views/Share/_LayoutShare.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"><h1>@Model.Name</h1></div>
+                <div class="col-md-6 detail-top-right">
+                    <p class="text-right">
+                        @Html.ActionLink("Edit", "CourseInformation", new { id = Model.Id }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+            <hr />
+
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic Info</a></li>
+                <li role="presentation"><a href="#outline" aria-controls="outline" role="tab" data-toggle="tab">Outline</a></li>
+                @*<li role="presentation"><a href="#exam" aria-controls="exam" role="tab" data-toggle="tab">Exams</a></li>
+                <li role="presentation"><a href="#participant" aria-controls="participant" role="tab" data-toggle="tab">Participants</a></li>
+                <li role="presentation"><a href="#trainer" aria-controls="trainer" role="tab" data-toggle="tab">Trainers</a></li>*@
+            </ul>
+
+            <!-- Tab Pans -->
+            <div class="tab-content">
+                <!-- Basic Content -->
+                <br />
+                <div role="tabpanel" class="tab-pane fade in active" id="basic">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Organization.Name)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Organization.Name)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Code)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Code)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Duration)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Duration)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Credit)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Credit)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Tag)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Tag)
+                        </dd>
+                    </dl>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="outline">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Outline)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Outline)
+                        </dd>
+                    </dl>
+                </div>
+                
+            </div>
+
+            <p class="text-right">
+                @Html.ActionLink("Edit", "CourseInformation", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+
+    </section>
+    <!-- /.content -->
+</div>
+

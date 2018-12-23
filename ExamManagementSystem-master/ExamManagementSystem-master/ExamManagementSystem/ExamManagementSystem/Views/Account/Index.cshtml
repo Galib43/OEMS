@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Models.UserAcount>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+                      <div class="content-wrapper">
+                          <!-- Content Header (Page header) -->
+                          <section class="content-header">
+                              <h1>
+                                  Dashboard
+                                  <small>Control panel</small>
+                              </h1>
+                              <ol class="breadcrumb">
+                                  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                                  <li class="active">Dashboard</li>
+                              </ol>
+                          </section>
+                          <!-- Main content -->
+                          <section class="content">
+                              <!-- Main row -->
+
+                              <p>
+                                  @Html.ActionLink("Create New", "Register")
+                              </p>
+                              <table class="table">
+                                  <tr>
+                                      <th>
+                                          @Html.DisplayNameFor(model => model.FirstName)
+                                      </th>
+                                      <th>
+                                          @Html.DisplayNameFor(model => model.LastName)
+                                      </th>
+                                      <th>
+                                          @Html.DisplayNameFor(model => model.Email)
+                                      </th>
+                                      <th>
+                                          @Html.DisplayNameFor(model => model.UserName)
+                                      </th>
+                                      <th>
+                                          @Html.DisplayNameFor(model => model.Password)
+                                      </th>
+                                      <th>
+                                          @Html.DisplayNameFor(model => model.ConfirmPassword)
+                                      </th>
+                                     
+                                      <th></th>
+                                  </tr>
+
+                                  @foreach (var item in Model)
+                                  {
+                                      <tr>
+                                          <td>
+                                              @Html.DisplayFor(modelItem => item.FirstName)
+                                          </td>
+                                          <td>
+                                              @Html.DisplayFor(modelItem => item.LastName)
+                                          </td>
+                                          <td>
+                                              @Html.DisplayFor(modelItem => item.Email)
+                                          </td>
+                                          <td>
+                                              @Html.DisplayFor(modelItem => item.UserName)
+                                          </td>
+                                          <td>
+                                              @Html.DisplayFor(modelItem => item.Password)
+                                          </td>
+                                          <td>
+                                              @Html.DisplayFor(modelItem => item.ConfirmPassword)
+                                          </td>
+                                          
+                                          <td>
+                                              @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                                              @Html.ActionLink("Details", "index", new { id = item.UserId }) |
+                                              @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+                                          </td>
+                                      </tr>
+                                  }
+
+                              </table>
+
+                              <!-- /.row (main row) -->
+                          </section>
+                          <!-- /.content -->
+                      </div>
+
+    
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
